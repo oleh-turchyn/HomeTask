@@ -17,6 +17,12 @@ public class TestSpring {
         System.out.println(beanA1);
         System.out.println(beanA2);
         System.out.println(beanA3);
+        BeanE beanE1 = context.getBean("beanE1", BeanE.class);
+        BeanE beanE2 = context.getBean("beanE2", BeanE.class);
+        BeanE beanE3 = context.getBean("beanE3", BeanE.class);
+        System.out.println(beanE1);
+        System.out.println(beanE2);
+        System.out.println(beanE3);
         context.close();
     }
 }

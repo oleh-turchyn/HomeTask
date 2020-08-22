@@ -39,4 +39,17 @@ public class MyConfiguaration {
         return new BeanA(beanC(),beanD());
     }
 
+    @Bean
+    public BeanE beanE1(){
+        return new BeanE(beanA1());
+    }
+    @Bean
+    public BeanE beanE2(){
+        return new BeanE(beanA2());
+    }
+    @Bean
+    public BeanE beanE3(){
+        return new BeanE(beanA3());
+    }
+
 }
