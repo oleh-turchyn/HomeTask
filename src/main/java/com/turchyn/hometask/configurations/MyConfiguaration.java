@@ -10,17 +10,17 @@ import org.springframework.core.annotation.Order;
 @PropertySource("classpath:pojo.properties")
 @Import({AnotherConfiguration.class})
 public class MyConfiguaration {
-    @Bean
+    @Bean(initMethod = "myInit",destroyMethod = "myDestroy")
     @Order(2)
     public BeanB beanB(){
         return new BeanB();
     }
-    @Bean
+    @Bean(initMethod = "myInit",destroyMethod = "myDestroy")
     @Order(3)
     public BeanC beanC(){
         return new BeanC();
     }
-    @Bean
+    @Bean(initMethod = "myInit",destroyMethod = "myDestroy")
     @Order(1)
     public BeanD beanD(){
         return new BeanD();
