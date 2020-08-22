@@ -1,5 +1,8 @@
 package com.turchyn.hometask.pojo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class BeanE implements BeanValidator {
     private String name;
     private int value;
@@ -9,7 +12,6 @@ public class BeanE implements BeanValidator {
     public void validate() {
 
     }
-
     public BeanE(BeanA beanA) {
         this.beanA=beanA;
     }
@@ -21,5 +23,13 @@ public class BeanE implements BeanValidator {
                 ", value=" + value +
                 " BeanA " + beanA +
                 '}';
+    }
+    @PostConstruct
+    public void postConstruct(){
+        System.out.println("BeanE postConstruct method");
+    }
+    @PreDestroy
+    public void preDestroy(){
+        System.out.println("BeanE preDestroy method");
     }
 }
