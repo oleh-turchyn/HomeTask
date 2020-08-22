@@ -3,6 +3,7 @@ package com.turchyn.hometask.configurations;
 import com.turchyn.hometask.pojo.*;
 
 import org.springframework.context.annotation.*;
+import org.springframework.core.annotation.Order;
 
 @Configuration
 @ComponentScan("com.turchyn.hometask")
@@ -10,14 +11,17 @@ import org.springframework.context.annotation.*;
 @Import({AnotherConfiguration.class})
 public class MyConfiguaration {
     @Bean
+    @Order(2)
     public BeanB beanB(){
         return new BeanB();
     }
     @Bean
+    @Order(3)
     public BeanC beanC(){
         return new BeanC();
     }
     @Bean
+    @Order(1)
     public BeanD beanD(){
         return new BeanD();
     }

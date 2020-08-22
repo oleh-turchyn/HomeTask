@@ -21,8 +21,8 @@ public class BeanA implements BeanValidator {
         return "BeanA{" +
                 "name='" + name + '\'' +
                 ", value=" + value +
-                " Bean1" + b1 +
-                " Bean2" + b2 +
+                " Bean1 " + b1 +
+                " Bean2 " + b2 +
                 '}';
     }
 }
