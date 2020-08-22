@@ -1,6 +1,9 @@
 package com.turchyn.hometask.pojo;
 
-public class BeanA implements BeanValidator {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class BeanA implements BeanValidator, InitializingBean, DisposableBean {
     private String name;
     private int value;
     private BeanValidator b1;
@@ -24,5 +27,14 @@ public class BeanA implements BeanValidator {
                 " Bean1 " + b1 +
                 " Bean2 " + b2 +
                 '}';
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("InitializingBeanA method call");
+    }
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("DisposableBeanA method call");
     }
 }
