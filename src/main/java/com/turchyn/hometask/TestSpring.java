@@ -21,6 +21,8 @@ public class TestSpring {
 
         TestBean testBean = context.getBean("testBean",TestBean.class);
         testBean.myMethod();
+        AnotherTestBean anotherTestBean = context.getBean("anotherTestBean",AnotherTestBean.class);
+        System.out.println(anotherTestBean);
         context.close();
     }
 }
