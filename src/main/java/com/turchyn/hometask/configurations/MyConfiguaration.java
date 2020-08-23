@@ -1,9 +1,10 @@
 package com.turchyn.hometask.configurations;
 
-import com.turchyn.hometask.BeanFactoryRealization;
-import com.turchyn.hometask.pojo.*;
-
-import org.springframework.beans.factory.BeanFactory;
+import com.turchyn.hometask.pojo.beans1.BeanA;
+import com.turchyn.hometask.pojo.beans1.BeanB;
+import com.turchyn.hometask.pojo.beans1.BeanC;
+import com.turchyn.hometask.pojo.beans3.BeanD;
+import com.turchyn.hometask.pojo.beans3.BeanE;
 import org.springframework.context.annotation.*;
 import org.springframework.core.annotation.Order;
 
@@ -12,50 +13,5 @@ import org.springframework.core.annotation.Order;
 @PropertySource("classpath:pojo.properties")
 @Import({AnotherConfiguration.class})
 public class MyConfiguaration {
-    @Bean(initMethod = "myInit",destroyMethod = "myDestroy")
-    @Order(2)
-    public BeanB beanB(){
-        return new BeanB();
-    }
-    @Bean(initMethod = "myInit",destroyMethod = "myDestroy")
-    @Order(3)
-    public BeanC beanC(){
-        return new BeanC();
-    }
-    @Bean(initMethod = "myInit",destroyMethod = "myDestroy")
-    @Order(1)
-    public BeanD beanD(){
-        return new BeanD();
-    }
 
-    @Bean
-    public BeanA beanA1(){
-        return new BeanA(beanB(),beanC());
-    }
-    @Bean
-    public BeanA beanA2(){
-        return new BeanA(beanB(),beanD());
-    }
-    @Bean
-    public BeanA beanA3(){
-        return new BeanA(beanC(),beanD());
-    }
-
-    @Bean
-    public BeanE beanE1(){
-        return new BeanE(beanA1());
-    }
-    @Bean
-    public BeanE beanE2(){
-        return new BeanE(beanA2());
-    }
-    @Bean
-    public BeanE beanE3(){
-        return new BeanE(beanA3());
-    }
-
-    @Bean
-    public BeanFactoryRealization beanFactoryRealization(){
-        return new BeanFactoryRealization();
-    }
 }
