@@ -18,6 +18,9 @@ public class TestSpring {
         System.out.println(beanA);
         System.out.println(beanB);
         System.out.println(beanC);
+
+        TestBean testBean = context.getBean("testBean",TestBean.class);
+        testBean.myMethod();
         context.close();
     }
 }

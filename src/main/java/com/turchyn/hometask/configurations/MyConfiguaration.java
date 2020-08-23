@@ -9,7 +9,7 @@ import org.springframework.context.annotation.*;
 import org.springframework.core.annotation.Order;
 
 @Configuration
-@ComponentScan(basePackages = {"com.turchyn.hometask.pojo.beans1","com.turchyn.hometask.pojo.anotherbeans"} )
+@ComponentScan(basePackages = {"com.turchyn.hometask.pojo.beans1","com.turchyn.hometask.pojo.anotherbeans","com.turchyn.hometask.pojo.beans_impl","com.turchyn.hometask.pojo"} )
 
 public class MyConfiguaration {
 
