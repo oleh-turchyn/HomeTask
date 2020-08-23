@@ -15,8 +15,12 @@ public class BeanA implements BeanValidator, InitializingBean, DisposableBean {
     }
 
     @Override
-    public void validate() {
-
+    public boolean validate() {
+        if(name!=null&&value>0){
+            return true;
+        }
+        else
+        return false;
     }
 
     @Override

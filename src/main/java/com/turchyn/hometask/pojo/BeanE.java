@@ -9,8 +9,12 @@ public class BeanE implements BeanValidator {
     private BeanA beanA;
 
     @Override
-    public void validate() {
-
+    public boolean validate() {
+        if(name!=null&&value>0){
+            return true;
+        }
+        else
+            return false;
     }
     public BeanE(BeanA beanA) {
         this.beanA=beanA;

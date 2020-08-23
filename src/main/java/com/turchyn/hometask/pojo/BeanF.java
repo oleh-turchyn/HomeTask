@@ -4,8 +4,12 @@ public class BeanF implements BeanValidator {
     private String name;
     private int value;
     @Override
-    public void validate() {
-
+    public boolean validate() {
+        if(name!=null&&value>0){
+            return true;
+        }
+        else
+            return false;
     }
 
     @Override

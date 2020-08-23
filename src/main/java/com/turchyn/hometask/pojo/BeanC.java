@@ -8,8 +8,12 @@ public class BeanC implements BeanValidator {
     @Value("${beanC.value}")
     private int value;
     @Override
-    public void validate() {
-
+    public boolean validate() {
+        if(name!=null&&value>0){
+            return true;
+        }
+        else
+            return false;
     }
     public void myInit(){
         System.out.println("My initialization method");
