@@ -3,6 +3,7 @@ package com.turchyn.hometask;
 import com.turchyn.hometask.configurations.AnotherConfiguration;
 import com.turchyn.hometask.configurations.MyConfiguaration;
 import com.turchyn.hometask.pojo.*;
+import com.turchyn.hometask.pojo.anotherbeans.*;
 import com.turchyn.hometask.pojo.beans1.*;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -23,6 +24,20 @@ public class TestSpring {
         testBean.myMethod();
         AnotherTestBean anotherTestBean = context.getBean("anotherTestBean",AnotherTestBean.class);
         System.out.println(anotherTestBean);
+
+        System.out.println("testing scopes");
+        OtherBeanA otherBeanA1 = context.getBean("otherBeanA",OtherBeanA.class);
+        OtherBeanA otherBeanA2 = context.getBean("otherBeanA",OtherBeanA.class);
+        OtherBeanB otherBeanB = context.getBean("otherBeanB",OtherBeanB.class);
+        OtherBeanC otherBeanC1 = context.getBean("otherBeanC",OtherBeanC.class);
+        OtherBeanC otherBeanC2 = context.getBean("otherBeanC",OtherBeanC.class);
+
+        System.out.println(otherBeanA1);
+        System.out.println(otherBeanA2);
+        System.out.println(otherBeanB);
+        System.out.println(otherBeanC1);
+        System.out.println(otherBeanC2);
+
         context.close();
     }
 }
