@@ -14,8 +14,14 @@ public class BeanB implements BeanValidator {
     public void myInit(){
         System.out.println("My initialization method");
     }
+    public void newInitMethod(){
+        System.out.println("new init method for beanB");
+    }
     public void myDestroy(){
         System.out.println("My destroy method");
+    }
+    public void newDestroyMethod(){
+        System.out.println("new destroy method for beanB");
     }
     @Override
     public String toString() {

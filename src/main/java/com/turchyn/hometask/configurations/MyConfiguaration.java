@@ -1,7 +1,9 @@
 package com.turchyn.hometask.configurations;
 
+import com.turchyn.hometask.BeanFactoryRealization;
 import com.turchyn.hometask.pojo.*;
 
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.annotation.*;
 import org.springframework.core.annotation.Order;
 
@@ -52,4 +54,8 @@ public class MyConfiguaration {
         return new BeanE(beanA3());
     }
 
+    @Bean
+    public BeanFactoryRealization beanFactoryRealization(){
+        return new BeanFactoryRealization();
+    }
 }

@@ -23,6 +23,9 @@ public class TestSpring {
         System.out.println(beanE1);
         System.out.println(beanE2);
         System.out.println(beanE3);
+
+
+
         context.close();
     }
 }
