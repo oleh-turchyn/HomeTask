@@ -9,9 +9,8 @@ import org.springframework.context.annotation.*;
 import org.springframework.core.annotation.Order;
 
 @Configuration
-@ComponentScan("com.turchyn.hometask")
-@PropertySource("classpath:pojo.properties")
-@Import({AnotherConfiguration.class})
+@ComponentScan("com.turchyn.hometask.pojo.beans1")
+
 public class MyConfiguaration {
 
 }
